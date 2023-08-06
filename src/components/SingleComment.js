@@ -10,14 +10,16 @@ function SingleComment({ id, user, comment, upvotes, downvotes, onRemove }) {
         onRemove(id)
     }
 
-    function handleUpvoteComment(e, id) {
+    function handleUpvoteComment(e) {
         e.preventDefault()
-        console.log(id)
+        const newUpvotes = currentUpvotes + 1
+        setCurrentUpvotes(newUpvotes)
     }
 
-    function handleDownvoteComment(e, id) {
+    function handleDownvoteComment(e) {
         e.preventDefault()
-        console.log(id)
+        const newDownvotes = currentDownvotes + 1
+        setCurrentDownvotes(newDownvotes)
     }
 
     return (
