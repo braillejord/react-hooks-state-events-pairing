@@ -15,10 +15,10 @@ function VotingButtons({ upvotes, downvotes }) {
     }
 
     return (
-        <>
-            <button onClick={handleUpvoteClick}>{currentUpvotes + "👍"}</button>
-            <button onClick={handleDownvoteClick}>{currentDownvotes + "👎"}</button>
-        </>
+        <div>
+            <button onClick={handleUpvoteClick}>{currentUpvotes + " 👍"}</button>
+            <button onClick={handleDownvoteClick}>{currentDownvotes + " 👎"}</button>
+        </div>
     )
 }
 

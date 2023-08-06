@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <iframe
-        width="919"
-        height="525"
+        width="700"
+        height="400"
         src={video.embedUrl}
         allowFullScreen
         title="Thinking in React"

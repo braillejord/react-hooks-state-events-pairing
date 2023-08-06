@@ -5,9 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 5000px;
 }
 
 .App {
   text-align: center;
+}
+
+.comments {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.singleComment {
+  display: block;
 }

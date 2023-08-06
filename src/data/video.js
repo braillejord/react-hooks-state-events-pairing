@@ -11,11 +11,36 @@ const video = {
       id: 1,
       user: "duanebot",
       comment: "first!",
+      upvotes: 0,
+      downvotes: 0
     },
     {
       id: 2,
       user: "gaeron",
       comment: "What a great tutorial!",
+      upvotes: 0,
+      downvotes: 0
+    },
+    {
+      id: 3,
+      user: "ravishingriley",
+      comment: "I already knew this...",
+      upvotes: 0,
+      downvotes: 0
+    },
+    {
+      id: 4,
+      user: "reesedapuff",
+      comment: "omg omg omg",
+      upvotes: 0,
+      downvotes: 0
+    },
+    {
+      id: 5,
+      user: "frankman",
+      comment: "Can I go back to sleep?",
+      upvotes: 0,
+      downvotes: 0
     },
   ],
 };
