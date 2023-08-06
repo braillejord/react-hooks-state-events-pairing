@@ -19,3 +19,11 @@ body {
 .singleComment {
   display: block;
 }
+
+label {
+  padding: 5px;
+}
+
+select {
+  margin-right: 50px;
+}

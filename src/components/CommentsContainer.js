@@ -32,16 +32,25 @@ function CommentsContainer({ comments }) {
         }
     }
 
+
+
     return (
         <>
             <button onClick={handleHideComments}>{isOn ? "Show Comments" : "Hide Comments"}</button>
             <h2>{isOn ? "Comments Hidden" : comments.length + " Comments"}</h2>
-            <label for="sortComments">Sort Comments: </label>
-            <select name="sortComments" id="sortComments" onChange={sortComments}>
-                <option value="no sort">No Sort</option>
-                <option value="ascending">A-Z</option>
-                <option value="descending">Z-A</option>
-            </select>
+            {isOn
+                ? null
+                : <>
+                    <label for="sortComments">Sort Comments: </label>
+                    <select name="sortComments" id="sortComments" onChange={sortComments}>
+                        <option value="no sort">No Sort</option>
+                        <option value="ascending">A-Z</option>
+                        <option value="descending">Z-A</option>
+                    </select>
+                    <label for="sortComments">Search Users: </label>
+                    <input type="text" placeholder="username"></input>
+                </>
+            }
             <div className="comments">
                 {isOn
                     ? null
