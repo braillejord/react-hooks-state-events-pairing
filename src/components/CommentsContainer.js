@@ -1,8 +1,6 @@
 import React from "react";
 
 function CommentsContainer({ comments }) {
-    console.log(comments)
-
     return (
         <div>
             <button>Hide Comments</button>
