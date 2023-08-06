@@ -1,18 +1,22 @@
+import React from "react";
+import VideoInfo from "./VideoInfo.js";
+
 import video from "../data/video.js";
 
 function App() {
-  console.log("Here's your data:", video);
-
   return (
     <div className="App">
       <iframe
         width="919"
         height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
+        src={video.embedUrl}
         allowFullScreen
         title="Thinking in React"
       />
+      <VideoInfo video={video} />
+      {/* <VotingButtons />
+      <CommentsContainer /> */}
+
     </div>
   );
 }
