@@ -3,7 +3,7 @@ import SingleComment from "./SingleComment";
 
 function CommentsContainer({ comments }) {
     const [isOn, setIsOn] = useState(false)
-    const [currentComments, setCurrentComments] = useState(comments)
+    const [currentComments, setCurrentComments] = useState([...comments])
 
     function handleHideComments() {
         setIsOn(!isOn)
@@ -18,10 +18,30 @@ function CommentsContainer({ comments }) {
         setCurrentComments(updatedComments)
     }
 
+    function sortComments(e) {
+        if (e.target.value === "no sort") {
+            setCurrentComments([...comments])
+
+        } else if (e.target.value === "ascending") {
+            const updatedComments = currentComments.sort((a, b) => a.user.localeCompare(b.user))
+            setCurrentComments([...updatedComments])
+
+        } else if (e.target.value === "descending") {
+            const updatedComments = currentComments.sort((a, b) => b.user.localeCompare(a.user))
+            setCurrentComments([...updatedComments])
+        }
+    }
+
     return (
         <>
             <button onClick={handleHideComments}>{isOn ? "Show Comments" : "Hide Comments"}</button>
             <h2>{isOn ? "Comments Hidden" : comments.length + " Comments"}</h2>
+            <label for="sortComments">Sort Comments: </label>
+            <select name="sortComments" id="sortComments" onChange={sortComments}>
+                <option value="no sort">No Sort</option>
+                <option value="ascending">A-Z</option>
+                <option value="descending">Z-A</option>
+            </select>
             <div className="comments">
                 {isOn
                     ? null
