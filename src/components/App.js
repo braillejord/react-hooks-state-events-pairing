@@ -1,5 +1,7 @@
 import React from "react";
 import VideoInfo from "./VideoInfo.js";
+import VotingButtons from "./VotingButtons.js";
+import CommentsContainer from "./CommentsContainer.js";
 
 import video from "../data/video.js";
 
@@ -14,8 +16,8 @@ function App() {
         title="Thinking in React"
       />
       <VideoInfo video={video} />
-      {/* <VotingButtons />
-      <CommentsContainer /> */}
+      <VotingButtons upvotes={video.upvotes} downvotes={video.downvotes} />
+      <CommentsContainer comments={video.comments} />
 
     </div>
   );
