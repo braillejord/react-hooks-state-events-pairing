@@ -4,6 +4,7 @@ import SingleComment from "./SingleComment";
 function CommentsContainer({ comments }) {
     const [isOn, setIsOn] = useState(false)
     const [currentComments, setCurrentComments] = useState([...comments])
+    const [searchInput, setSearchInput] = useState()
 
     function handleHideComments() {
         setIsOn(!isOn)
@@ -32,8 +33,6 @@ function CommentsContainer({ comments }) {
         }
     }
 
-
-
     return (
         <>
             <button onClick={handleHideComments}>{isOn ? "Show Comments" : "Hide Comments"}</button>
@@ -48,13 +47,13 @@ function CommentsContainer({ comments }) {
                         <option value="descending">Z-A</option>
                     </select>
                     <label for="sortComments">Search Users: </label>
-                    <input type="text" placeholder="username"></input>
+                    <input type="text" placeholder="username" onChange={(e) => setSearchInput(e.target.value)}></input>
                 </>
             }
             <div className="comments">
                 {isOn
                     ? null
-                    : currentComments.map((comment) => (
+                    : currentComments.filter((c) => searchInput ? c.user.includes(searchInput) : true).map((comment) => (
                         <SingleComment
                             key={comment.id}
                             id={comment.id}
